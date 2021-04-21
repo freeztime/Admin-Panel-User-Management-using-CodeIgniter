@@ -8,7 +8,7 @@ RUN apk --update add ca-certificates
 RUN echo "https://dl.bintray.com/php-alpine/v3.11/php-7.3" >> /etc/apk/repositories
 
 # Install packages
-RUN apk --no-cache add php php-fpm php-opcache php-openssl php-curl \
+RUN apk --no-cache add php php-fpm php-opcache php-openssl php-curl php-mysqli \
     nginx supervisor curl
 
 # https://github.com/codecasts/php-alpine/issues/21
