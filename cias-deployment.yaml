@@ -57,6 +57,11 @@ spec:
             secretKeyRef:
               name: cias-mysql-secret
               key: db_name
+        - name: REDIS_HOST
+          valueFrom:
+            secretKeyRef:
+              name: cias-other-secret
+              key: redis_host
         - name: ENCRYPTION_KEY
           valueFrom:
             secretKeyRef:
