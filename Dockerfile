@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM alpine:3.11
 
 ADD https://dl.bintray.com/php-alpine/key/php-alpine.rsa.pub /etc/apk/keys/php-alpine.rsa.pub
 
@@ -12,7 +12,7 @@ RUN apk --no-cache add php php-fpm php-opcache php-openssl php-curl php-mysqli \
     nginx supervisor curl
 
 # https://github.com/codecasts/php-alpine/issues/21
-# RUN ln -s /usr/bin/php7 /usr/bin/php
+RUN ln -s /usr/bin/php7 /usr/bin/php
 
 # Configure nginx
 COPY webconf/nginx.conf /etc/nginx/nginx.conf
