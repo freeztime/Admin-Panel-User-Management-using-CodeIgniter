@@ -21,10 +21,6 @@ spec:
       labels:
         app: dev-cias
         tier: backend
-      annotations:
-        armsPilotAutoEnable: "on"
-        armsPilotCreateAppName: dev-cias
-        armsAppType: PHP
     spec:
       containers:
       - name: dev-cias
@@ -71,14 +67,6 @@ spec:
             secretKeyRef:
               name: cias-other-secret
               key: encryption_key
-        volumeMounts:
-        - mountPath: /etc/php/7.3/fpm/conf.d/arms.ini
-          name: arms-ini
-          subPath: arms.ini
       imagePullSecrets:
       - name: acr-secret
       restartPolicy: Always
-      volumes:
-      - name: arms-ini
-        configMap:
-          name: arms-dev-cias.ini
