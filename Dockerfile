@@ -22,6 +22,9 @@ RUN rm /etc/nginx/conf.d/default.conf
 
 # Configure PHP-FPM
 COPY webconf/fpm-pool.conf /etc/php7/php-fpm.d/www.conf
+
+RUN mkdir -p /usr/local/arms/arms-php-agent
+COPY webconf/arms-7.3-alpine.so /usr/local/arms/arms-php-agent/
 # COPY webconf/php.ini /etc/php7/conf.d/custom.ini
 
 # Configure supervisord
